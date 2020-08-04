@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+      container_name: web
+      image: node:12.18.3-alpine
+      volumes:
+        - ./web:/web
+      working_dir: /web
+      command: yarn start
+      ports:
+        - 80:3000
+      tty: true
+      stdin_open: true
